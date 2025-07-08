@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 ]
 
-MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
-
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
