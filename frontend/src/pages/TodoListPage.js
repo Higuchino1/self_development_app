@@ -11,35 +11,33 @@ const TodoListPage = () => {
 
 function App() {
   const [todos, setTodos] = useState([
-    // { id: 1, text: 'Todo List 1', completed: false },
-    // { id: 2, text: 'Todo List 2', completed: true },
   ]);
 
   const completedCount = todos.filter(todo => todo.completed).length;
   const totalCount = todos.length;
 
-  // 완료 상태 토글
+  // 完了状態トグル
   const handleToggleComplete = (id) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
-  // 새 할 일 추가
+  // リスト追加
   const handleAdd = (text) => {
     if (!text.trim()) return;
     const newTodo = { id: Date.now(), text, completed: false };
     setTodos([...todos, newTodo]);
   };
 
-  // 텍스트 편집
+  // テキスト編集
   const handleEdit = (id, newText) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, text: newText } : todo
     ));
   };
 
-  // 삭제
+  // 削除
   const handleDelete = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
