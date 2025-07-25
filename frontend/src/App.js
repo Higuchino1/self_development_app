@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import PetPage from "./pages/PetPage";
 import InfoPage from "./pages/InfoPage";
 import LoginPage from "./pages/LoginPage";
+import TodoListPage from "./pages/TodoListPage";
 import axios from "axios";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={isLoggedIn ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/pet" element={isLoggedIn ? <PetPage /> : <Navigate to="/login" />} />
         <Route path="/info" element={isLoggedIn ? <InfoPage /> : <Navigate to="/login" />} />
+        <Route path="/todoList" element={isLoggedIn ?<TodoListPage /> : <Navigate to="/todoList" />} />
       </Routes>
     </Router>
   );
